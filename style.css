@@ -16,6 +16,13 @@
 
 @media (min-width: 600px) {
     .image-section {
+        grid-template-columns: repeat(2, 1fr);
+        width: 85%;
+    }
+}
+
+@media (min-width: 900px) {
+    .image-section {
         grid-template-columns: repeat(3, 1fr);
         width: 80%;
     }
