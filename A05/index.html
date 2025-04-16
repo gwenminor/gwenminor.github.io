@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hongkong</title>
+    <link rel="icon" type="image/jpeg" href="images/hklogo.png"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <style>
+      .hero-section {
+        position: relative;
+        height: 500px;
+        background: url('images/HK.jpg') no-repeat center center/cover;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .search-input {
+        width: 200px;
+      }
+
+      @media (max-width: 576px) {
+        .search-input {
+          width: 100px;
+        }
+      }
+
+      .card-img-top {
+        height: 250px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">Explore Hongkong</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="title" id="offcanvasDarkNavbarLabel">Hongkong</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Sign out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-section mt-5">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="display-4 fw-bold">HONGKONG</h1>
+        <p class="lead">A vibrant city and global hub known for its skyline, culture, and unique blend of East and West.</p>
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Places to Visit in Hongkong</h2>
+      <div class="row row-cols-1 row-cols-md-4 g-4 text-center">
+
+        <div class="col">
+          <div class="card h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#disney">
+            <img src="images/disney.jpg" class="card-img-top" alt="disney">
+            <div class="card-body">
+              <h5 class="card-title">Hongkong Disneyland Resort</h5>
+              <p class="card-text">Experience the magic and wonder of Disney with thrilling rides and beloved characters.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#oceanpark">
+            <img src="images/oceanpark.jpg" class="card-img-top" alt="HKOceanPark">
+            <div class="card-body">
+              <h5 class="card-title">Hongkong Ocean Park</h5>
+              <p class="card-text">Discover a unique blend of marine life, animal encounters, and exciting amusement park rides.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#LKF">
+            <img src="images/LKF.jpg" class="card-img-top" alt="LKF">
+            <div class="card-body">
+              <h5 class="card-title">Lan Kwai Fong</h5>
+              <p class="card-text">Immerse yourself in the vibrant nightlife with a wide array of bars, restaurants, and clubs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm" role="button" data-bs-toggle="modal" data-bs-target="#MK">
+            <img src="images/mongkok.jpg" class="card-img-top" alt="MK">
+            <div class="card-body">
+              <h5 class="card-title">Mongkok</h5>
+              <p class="card-text">Explore bustling street markets, vibrant shopping districts, and experience the local Hong Kong life.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="disney" tabindex="-1" aria-labelledby="disneyLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="disneyLabel">Hongkong Disneyland Resort</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div id="carouselDisney" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/disney1.jpg" class="d-block w-100" alt="Disneyland 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/disney2.jpg" class="d-block w-100" alt="Disneyland 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/disney3.jpg" class="d-block w-100" alt="Disneyland 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselDisney" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselDisney" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            Hong Kong Disneyland, located on Lantau Island, is a world-famous theme park that brings Disney magic to life. It features seven themed lands, including Fantasyland, Tomorrowland, and Adventureland, with exciting rides, dazzling shows, and meet-and-greets with beloved Disney characters. Perfect for all ages, it’s a top destination for fun, adventure, and unforgettable memories.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="oceanpark" tabindex="-1" aria-labelledby="oceanparkLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="oceanparkLabel">Hongkong Ocean Park</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div id="carouselOcean" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/op1.jpg" class="d-block w-100" alt="Ocean Park 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/op2.jpg" class="d-block w-100" alt="Ocean Park 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/op3.jpg" class="d-block w-100" alt="Ocean Park 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselOcean" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselOcean" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            Ocean Park Hong Kong is a marine-life theme park that combines thrilling rides, animal exhibits, and live shows. Located on the south side of Hong Kong Island, it’s home to pandas, dolphins, aquariums, and one of the world’s longest cable car rides—offering fun and adventure for all ages.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="LKF" tabindex="-1" aria-labelledby="LKFLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="LKFLabel">Lan Kwai Fong</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div id="carouselLKF" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/LKF1.jpg" class="d-block w-100" alt="LKF 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/LKF2.jpg" class="d-block w-100" alt="LKF 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/LKF3.jpg" class="d-block w-100" alt="LKF 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselLKF" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselLKF" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            Lan Kwai Fong is Hong Kong’s most famous nightlife district, packed with trendy bars, clubs, and restaurants. Located in Central, it’s the go-to spot for partying, socializing, and enjoying the city’s vibrant evening scene.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="MK" tabindex="-1" aria-labelledby="MKLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="MKLabel">Mongkok</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body text-center">
+            <div id="carouselMK" class="carousel slide mb-3" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/MK1.jpg" class="d-block w-100" alt="Mongkok 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/MK2.jpg" class="d-block w-100" alt="Mongkok 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="images/MK3.jpg" class="d-block w-100" alt="Mongkok 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselMK" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselMK" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+            Mong Kok is one of Hong Kong’s busiest and most colorful districts, known for its street markets, local food, fashion shops, and vibrant city life. It’s the perfect place to experience authentic Hong Kong culture.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
