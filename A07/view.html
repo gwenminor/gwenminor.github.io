@@ -1,0 +1,56 @@
+<!-- product.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product View</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <a href="../A07/index.html" class="btn btn-secondary mb-3">← Back to Search</a>
+    <div id="product-view" class="card p-4 shadow-sm"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    const apiUrl = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline';
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    $.get(apiUrl, function (products) {
+      const product = products.find(p => p.id == productId);
+      const view = $('#product-view');
+
+      if (!product) {
+        view.html('<div class="alert alert-danger">Product not found.</div>');
+        return;
+      }
+
+      const imgSrc = product.image_link || 'https://via.placeholder.com/300';
+      const desc = product.description || 'No description available.';
+      const price = product.price ? `$${product.price}` : 'N/A';
+      const category = product.category || 'N/A';
+
+      view.html(`
+        <div class="row">
+          <div class="col-md-5">
+            <img src="${imgSrc}" class="img-fluid rounded" alt="${product.name}">
+          </div>
+          <div class="col-md-7">
+            <h2>${product.name}</h2>
+            <p><strong>Brand:</strong> ${product.brand}</p>
+            <p><strong>Price:</strong> ${price}</p>
+            <p><strong>Category:</strong> ${category}</p>
+            <p><strong>Description:</strong> ${desc}</p>
+            <a href="${product.product_link}" target="_blank" class="btn btn-primary mt-3">Buy Now</a>
+          </div>
+        </div>
+      `);
+    }).fail(() => {
+      $('#product-view').html('<div class="alert alert-danger">Unable to load product data.</div>');
+    });
+  </script>
+</body>
+</html>
