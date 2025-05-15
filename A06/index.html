@@ -32,10 +32,15 @@
     </style>
   </head>
 
-  <body>
+  <body id="body">
     <div class="container-fluid p-5 mb-3 d-flex align-items-center justify-content-between" style="background-color: rgb(210, 125, 45); color: rgb(234, 226, 201)">
       <a href="../index.html" class="btn btn-light rounded-pill px-3 py-2 fw-bold" style="font-size: 1rem;">Back</a>
       <div class="h2 mx-auto text-center position-absolute start-50 translate-middle-x">The Dough Cravings</div>
+      <div>
+        <button id="colorBtn" onclick="changeMode()" class="ms-4 px-3 py-2 btn btn-dark">
+          Dark Mode
+        </button>
+      </div>
     </div>
 
     <div class="container my-3">
@@ -75,6 +80,23 @@
     </div>
 
     <script>
+       var mode = "light";
+    function changeMode(){
+      var body = document.getElementById("body");
+      var colorBtn = document.getElementById("colorBtn");
+      mode = mode == "light" ? "dark" : "light";
+
+      var btnText = mode == "dark" ? "Light Mode" : "Dark Mode";
+      var btnClass = mode == "dark" ? "btn-light" : "btn-dark";
+
+      colorBtn.classList.remove("btn-light");
+      colorBtn.classList.remove("btn-dark");
+      colorBtn.classList.add(btnClass);
+      colorBtn.innerHTML = btnText;
+
+      body.setAttribute("data-bs-theme", mode);
+    }
+
        var pictures = ["md.jpg", "md1.jpg", "md2.jpg", "md3.png", "md4.jpg", "md5.jpg", "md6.jpg", "md7.jpg"];
       var rowElement = document.getElementById("container-row");
 
